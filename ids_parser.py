@@ -2,23 +2,23 @@ import sys
 from collections import defaultdict
 
 def parse_candump(file_path):
-    """Parse le fichier candump et extrait les timestamps par ID CAN."""
+    "Parse le fichier candump et extrait les timestamps par ID CAN."
     id_timestamps = defaultdict(list)
     
     try:
         with open(file_path, 'r') as f:
             for line in f:
-                # Format standard candump : (1730286889.123456) vcan0 0B0#0011223344556677
+                # Format standard candump 
                 line = line.strip()
                 if not line:
                     continue
                 
                 parts = line.split()
                 if len(parts) >= 3:
-                    # Extraction du timestamp en enlevant les parenthèses
+                    # Extraction du timestamp 
                     timestamp = float(parts[0].strip('()'))
                     
-                    # Extraction de l'ID CAN (avant le '#')
+                    # Extraction de l'ID CAN 
                     can_frame = parts[2]
                     can_id = can_frame.split('#')[0]
                     
@@ -30,7 +30,7 @@ def parse_candump(file_path):
     return id_timestamps
 
 def analyze_frequencies(id_timestamps):
-    """Calcule les delta t (Δt) entre les trames successives pour détecter les anomalies."""
+    "Calcule les delta_t (Δt) entre les trames successives pour détecter les anomalies."
     results = {}
     
     for can_id, timestamps in id_timestamps.items():
