@@ -29,15 +29,15 @@ def parse_and_analyze(file_path):
 def generate_iso21434_prompt(stats):
     prompt = f"""
 [CONTEXTE TECHNIQUE]
-Vous êtes un expert en cybersécurité automobile (ISO/SAE 21434). Un IDS (Intrusion Detection System) basé sur les anomalies temporelles a capturé une trace sur un bus CAN virtuel (vcan0).
+ Un IDS (Intrusion Detection System) basé sur les anomalies temporelles a capturé une trace sur un bus CAN virtuel (vcan0).
 
 [DONNÉES EXTRAITES]
 {json.dumps(stats, indent=2)}
 
 [CONSIGNE DE RÉDACTION]
-Rédigez une synthèse d'incident de cybersécurité structurée selon la norme ISO/SAE 21434 contenant :
+Rédaction d'une synthèse d'incident de cybersécurité structurée selon la norme ISO/SAE 21434 contenant :
 1. **Item Definition** : Rôle supposé du message (ex: ID 0x0B0 = Télécatégorie / Vitesse / Powertrain).
-2. **Threat Scenario** : Nature de l'attaque identifiée (DoS / Flooding / Spoofing) en vous appuyant sur la chute anormale du Δt.
+2. **Threat Scenario** : Nature de l'attaque identifiée (DoS / Flooding / Spoofing) en s'appuyant sur la chute anormale du Δt.
 3. **Impact Assessment** : Impact sur la sécurité fonctionnelle (Safety) et la disponibilité du bus.
 4. **Feasibility Rating** : Facilité d'exécution de l'attaque sur bus CAN non sécurisé.
 5. **Mitigation Strategy** : Recommandations techniques (CAN FD avec SecOC, Filtrage matériel / Gateway, Rate Limiting).

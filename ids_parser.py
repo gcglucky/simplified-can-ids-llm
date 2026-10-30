@@ -70,4 +70,4 @@ if __name__ == "__main__":
     print("="*65)
     
     # Préparation du prompt pour la phase 3
-    print("\n[+] Prétraitement terminé. Ce tableau sera envoyé au LLM pour classification.")
+    print("\n[+] Prétraitement terminé.")
