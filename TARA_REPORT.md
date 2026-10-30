@@ -14,7 +14,7 @@
 
 ### B. Scénario de Menace (Threat Scenario)
 - **Type d'attaque** : **Denial of Service (DoS) par Submersion (Flooding)**.
-- **Preuve comportementale** : L'injection de 1000 trames avec un $\Delta t$ moyen de 2.21 ms surcharge la bande passante du bus et empêche la réception des messages prioritaires à cycle régulier.
+- **Preuve comportementale** : L'injection de 1000 trames avec un Delta_t moyen de 2.21 ms surcharge la bande passante du bus et empêche la réception des messages prioritaires à cycle régulier.
 
 ### C. Évaluation de l'Impact (ISO/SAE 21434)
 - **Safety Impact** : Élevé (Risque de perte d'affichage de vitesse ou de retard d'exécution de commandes critiques).
